@@ -12,7 +12,8 @@ const personas = [
   
   ];
 
-// devolver mayores
+// DEVOLVER UN ARRAY CON LOS MAYORES DE EDAD
+
 function devolverMayores(personas) {
 const resultado = [];
 personas.forEach(persona => {
@@ -24,7 +25,7 @@ return resultado;
 console.log(devolverMayores(personas));
 
 
-//devolver más joven
+//DEVOLVER EL MÁS JOVEN
 function masJoven(personas) {
     let joven = personas[0];
     personas.forEach(persona => {
@@ -37,7 +38,7 @@ function masJoven(personas) {
 
 console.log(masJoven(personas));
 
-//devolver más mayor 
+//DEVOLVER EL MÁS MAYOR
 function masMayor(personas) {
     let mayor = personas[0];
     personas.forEach(persona => {
@@ -50,3 +51,36 @@ function masMayor(personas) {
 }
 
 console.log(masMayor(personas));
+
+console.warn("ahora con funciones flecha 🏹");
+
+// DEVOLVER UN ARRAY CON LOS MAYORES DE EDAD
+const devolverMayoresArrow = personas => {
+    const resultado = [];
+    personas.forEach(persona => {if(persona.edad >= 18) resultado.push(persona)});
+    return resultado;
+};
+
+console.log(devolverMayoresArrow(personas));
+
+//DEVOLVER EL MÁS JOVEN
+const masJovenArrow = personas => {
+    let joven = personas[0];
+    personas.forEach(persona => {
+        if (persona.edad < joven.edad) joven = persona;
+    });
+    return joven;
+};
+
+console.log(masJovenArrow(personas));
+
+//DEVOLVER EL MÁS MAYOR
+const masMayorArrow = personas => {
+    let mayor = personas[0];
+    personas.forEach(persona => {
+        if(persona.edad > mayor.edad) mayor = persona;
+    });
+    return mayor;
+};
+
+console.log(masMayorArrow(personas));

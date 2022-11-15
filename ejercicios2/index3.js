@@ -1,8 +1,8 @@
 function area(base, altura) {
-    console.log(base * altura);
+    return base * altura;
 }
 
-area(4,2);
+console.log(area(4,2));
 
 const areaArrow = (base,altura) => base * altura;
 
